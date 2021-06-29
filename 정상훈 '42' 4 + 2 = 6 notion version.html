@@ -1,0 +1,655 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>정상훈. &#x27;42&#x27; : 4 + 2 = 6</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="0e3a79b0-61b8-4f45-a982-f89dcbb8fd36" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_8.png" style="object-position:center 70%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%89%E1%85%A1%E1%86%BC%E1%84%92%E1%85%AE%E1%86%AB%20&#x27;42&#x27;%204%20+%202%20=%206%200e3a79b061b84f45a982f89dcbb8fd36/1.jpg"/></div><h1 class="page-title">정상훈. &#x27;42&#x27; : 4 + 2 = 6</h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="321d3206-be1a-4f85-8353-b64aaca7c525"><div style="font-size:1.5em"><span class="icon">🙋‍♀️</span></div><div style="width:100%">- 간단한 요약을 위한 이력서입니다. 
+- 구체적인 활동 내역은 포트폴리오 모아보기 <a href="https://www.notion.so/3de8d5fa93de489a909d2f84bf63f8ba"><mark class="highlight-blue"><strong>(클릭)</strong></mark></a> 에서 확인해주세요! </div></figure><p id="45ef2ba9-5098-42b6-955b-b01fdf77ed46" class=""><strong>이름 I</strong> 정상훈 / SANGHOON, JUNG (JOY)</p><p id="bc7b3204-46eb-4f7c-bfaf-a9db932dccea" class=""><strong>생년월일 I</strong> 1980/03/27</p><p id="0de47d61-9c21-4bc6-b699-fcb5f5814e5d" class=""><strong>주소 I</strong> 서울특별시 마포구 서교동</p><p id="fbbb9655-2a22-4d0c-80f5-a936150520db" class=""><strong>MOBILE I</strong> 010-0000-0000</p><p id="f9bcfaa5-0371-4223-9c0e-b35cf8e962c3" class=""><strong>E-MAIL I</strong> ricomincio0327@gmail.com</p><h2 id="de9abd53-a9aa-4d70-a874-955af09b7c4b" class="block-color-gray_background">경력사항</h2><h3 id="f212f04a-572e-4efe-9621-50f5167af34b" class="">아이지 시스템 (주)  <mark class="highlight-gray">(2011. 03 - 2021. 04)</mark></h3><p id="0be1bfa4-0f4e-45d5-9b0e-113b7f0ee0af" class=""><strong>1. Tesco, 홈플러스 커뮤니케이션 플랫폼 운영 총괄  (wowwips)</strong></p><ul id="601bb4a6-ff38-4492-853f-203d9a80c066" class="bulleted-list"><li>Tesco, Homplus 와 332개의 협력서 커뮤니케이션 Web 플랫폼 운영 총괄</li></ul><ul id="187ca23d-0cac-4a73-8860-1a5c82016f4f" class="bulleted-list"><li>홈플러스 및 협력사 (Intranet) : 계약, 프로젝트 진행, 도면, 정산, 메일, 알림</li></ul><ul id="6f2a3840-b941-467b-bcbb-cbc9d549cb04" class="bulleted-list"><li>기술 이슈 총괄 : 버젼관리, 서버관리 및 유지보수 총괄</li></ul><ul id="6c885239-4a39-4b4a-b6d0-c672e2bbed29" class="bulleted-list"><li>월 사용료 과금 및 신규업체 계약  관리</li></ul><p id="26ab7c85-9abc-44ee-adcf-86da4e804c5d" class="">
+</p><p id="28040022-ee93-4cb4-bd1e-0fe35622e229" class="">👍 Got</p><ul id="ddc2f2fa-8be2-45eb-95be-4765b5038443" class="bulleted-list"><li>잘 만든 &#x27;플랫폼&#x27; 하나, &#x27;열 서비스&#x27; 안 부럽다.</li></ul><ul id="a31998bc-7246-48eb-9593-d3b7bf54e394" class="bulleted-list"><li>&#x27;계륵&#x27; : &quot;갑&quot; 같은 &quot;을&quot;</li></ul><ul id="d9b3b4f7-28e2-4fbd-89eb-d844143e88da" class="bulleted-list"><li>세금계산서 발급 방법</li></ul><ul id="cfcef28d-0852-4161-b673-98f30902fe9b" class="bulleted-list"><li>기술 카테고리별 노무비, 유지보수 의 범위</li></ul><ul id="769de252-9d1b-4083-8922-728fd4570285" class="bulleted-list"><li>써드파티 업체와의 관계 유지</li></ul><ul id="636b3298-111d-42bf-b3fa-9c795643b4f6" class="bulleted-list"><li>서비스 관리, URL 관리 , 위기상황 대처법</li></ul><ul id="4c88f3e6-9a20-4125-ac12-01de78213eae" class="bulleted-list"><li>계약 갱신을 위한 근거자료 수집(사용률 계산)</li></ul><ul id="e64b3860-fad3-4729-b5da-fc576d9aeb5b" class="bulleted-list"><li>인증서 갱신 및 설치 절차</li></ul><ul id="db048e84-974a-4020-bb07-24a5830e7613" class="bulleted-list"><li>자존심은 나중이고 서비스 복구가 먼저. </li></ul><p id="5a184143-f830-460b-9030-16baf8da4fbf" class="">
+</p><h3 id="06fa0972-c243-489e-9018-19236ec5f673" class="">2. 비플랫 유한회사  <mark class="highlight-gray">(2011. 09 - 2020. 10)</mark></h3><p id="ef7a90d9-f621-4968-8f8f-6b7f83f811b4" class="">
+</p><ul id="696bfcbc-3753-4030-ad64-6479735a2b1f" class="bulleted-list"><li>공동창업자(Co_Founder) : 유한회사 지분(주식) 보유(의결권)후 퇴사 전 반납 </li></ul><ul id="a6fe5074-422a-4255-ad32-66375718b254" class="bulleted-list"><li>유한회사 설립 업무</li></ul><ul id="d924603c-a159-4d27-bb4a-3357527664cb" class="bulleted-list"><li>지적재산권(intellectual property right) 및 특허 관리</li></ul><ul id="ac86df4e-878f-49de-bea2-b72a92f69beb" class="bulleted-list"><li>Recruit (개발자, 디자이너, 인턴, 브라질 개발자, 인도네시아 개발팀, 미국 개발팀 등)</li></ul><ul id="3413cc9a-592b-46da-b097-898ce206f0f7" class="bulleted-list"><li>미국 법인 설립 지원 업무</li></ul><ul id="ef4ac432-bda5-4a2f-8874-18f84212c0d5" class="bulleted-list"><li>Product Manager (b.Sales / b.Sponsored / b.mkt(btwn)) 개발 총괄 </li></ul><p id="7a914338-efa5-41a7-bf4f-1c77fac656f8" class=""> (기획, 디자인, 프로토타입 시연, 개발일정 관리, 수정, 피드백 관리, 테스트 관리, 버젼관리, 런칭계획)</p><ul id="ddaf5c2f-a13b-49ae-b6d3-6e0fc5aa6f8d" class="bulleted-list"><li>App, Web, Admin Web 개발 총괄</li></ul><ul id="e8641248-178c-4fe3-bd23-c17d4967a4bc" class="bulleted-list"><li>App Store / Google Play  버젼관리</li></ul><ul id="bca84f72-41f3-4961-8067-6306e46fcd6d" class="bulleted-list"><li>법인 총무 업무 (세무, 인사, 각종 계약 관리, 해외송금 관리 등)</li></ul><ul id="3062ca95-b5b5-4f8c-986d-7b1b662fae16" class="bulleted-list"><li>직원 개별 면담을 통한 업무상 어려움 수집 (수시) </li></ul><p id="479e2c92-787c-4a40-a20d-da39e33ad1eb" class="">
+</p><p id="bee14b5b-a407-4bab-b4d3-4d795d7bba6b" class="">👍 Got </p><ul id="f152468d-0416-4b69-9d5f-5468e785cf74" class="bulleted-list"><li>Start-Up 의 &#x27;설립&#x27; 에서 부터 서비스 &#x27;런칭&#x27; 까지의 All Process </li></ul><ul id="3aed1be2-7713-4ba1-96f6-9a6907ecdf88" class="bulleted-list"><li>미국의 상점에서 &#x27;첫번째 결제&#x27; 가 일어나서 발급된 &#x27;첫 미국 영수증&#x27;</li></ul><ul id="ce21dd88-eb26-43e1-9424-00a1ef146955" class="bulleted-list"><li>VISA CARD 미국 본사 기술팀 과의 협업 어려움. : 메뉴얼을 맹신 하지 말고 의심가면 무조건 확인</li></ul><ul id="01c7cb16-43d6-4f0d-b9d8-3762efc385f7" class="bulleted-list"><li>개발자들도 나라별 특색이 있다. 외국 개발자들과 일 하려면 그 나라의 &#x27;문화&#x27; 를 함께 감당 할것! (EX : 이슬람 라마단 및 매일 기도시간)</li></ul><ul id="99062e00-2134-47f4-bfd8-2af9dd874ebe" class="bulleted-list"><li>&quot;내적 동기&quot;  를 높여라.</li></ul><ul id="8676e934-04d3-4ad4-a074-82c9c3b5745c" class="bulleted-list"><li>&quot;PM&quot; 이라면 &quot;운동화&quot; 를 신자 : PM이 움직이는 만큼 팀원들은 &#x27;본연의 업무&#x27; 에 집중한다.     </li></ul><h3 id="c02b8b5a-ac0b-4d89-b414-9bc7bed8adfa" class="">3. AZUR Italia Handcraft <mark class="highlight-gray">(2006. 12 - 2010. 05)</mark></h3><p id="88ecbfc7-2231-4204-b9b2-8be0f8f5d75c" class="">
+</p><ul id="6681f545-fefc-457f-9a23-36372374a0a5" class="bulleted-list"><li>Italia Firenze (FI), Incisa in Val D&#x27;arno / C.P. 64</li></ul><ul id="c09f8bad-2d4f-47ca-abbf-ee788b046b3c" class="bulleted-list"><li>육아용품 생산관리팀 생산공정 관리</li></ul><ul id="e405cdfa-770b-4a50-bceb-5bba8ad9e70b" class="bulleted-list"><li>Italia Baby ShowRoom 설치 총괄</li></ul><ul id="6686dca4-95cf-4a36-aaca-4e45daafb6ec" class="bulleted-list"><li>공정혁신 TF Team (Lean System 도입 : Buon Figlioli 컨설팅 팀)</li></ul><p id="5287de20-cf8a-4624-8c6a-e734f2a98634" class="">
+</p><p id="731a178f-7a97-4d87-a40d-bf0dae8bb325" class="">👍 Got </p><ul id="18908ebe-b0ce-4404-b83b-7f24a6e4abd2" class="bulleted-list"><li>다양한 문화의 사람들과 함께 일하는 법 / 소통 하는 법 / 함께 하는 법</li></ul><ul id="9220c4a1-f5bd-4adf-ba6c-865f4c52b9d0" class="bulleted-list"><li>얼굴, 문화, 종교, 성별, 연령은 달라도 &#x27;감정&#x27; 과 &#x27;욕구&#x27; 는 같다. : 감정과 욕구로 소통하기</li></ul><p id="a842ace7-570a-48eb-abcf-f8d3ec1292e2" class="">
+</p><h3 id="5f8e9ea9-c3f5-4d3e-80c4-a6a9366a9aab" class="">4. 씨에 프랑스(Cie France) <mark class="highlight-gray">(2005. 10 - 2005. 12)</mark></h3><ul id="3712db68-0a81-4c15-87f2-f9db86900fc4" class="bulleted-list"><li>유럽팀 인턴</li></ul><ul id="28abda36-0681-4595-baef-e60a265f073e" class="bulleted-list"><li>유럽 여행프로그램 개발(50건) 및 운영 / OP</li></ul><ul id="4e203649-0e4b-438a-b204-fd45132befc8" class="bulleted-list"><li>행사진행 Land사, 현지 가이드, 인솔자 관리</li></ul><ul id="3f837b20-2f19-4bbc-923f-5cfd485dc936" class="bulleted-list"><li>배낭여행 프로그램 개발 및 운영 OP</li></ul><p id="ecbb8a85-9bb0-45cd-8886-69335e9ff0fb" class="">
+</p><p id="64a07b0d-f436-4f3c-8632-6a22453fd29f" class="">👍 Got </p><ul id="97b87e25-9f6c-4bb7-8f5d-b97e468c21dd" class="bulleted-list"><li>항공권 발급시 좋은 자리에 앉는 법</li></ul><ul id="bfc055af-814b-44f5-89a7-d04d0115bc8d" class="bulleted-list"><li>Plan B, Plan C : 위기 상황 대처법</li></ul><ul id="85ec3d59-cf23-4de9-8d4e-f2b18f9b9da7" class="bulleted-list"><li>패키지 여행 : 비용보다 중요한 항공권 좌석 채우기 (상담만 받고 예약하지 말것 ! 그럼 할인된 가격으로 제안이 온다.)</li></ul><ul id="8f0e475c-af22-4dee-bf14-bfee2433a51f" class="bulleted-list"><li>내 일에 대한 애정 그리고 책임감 : 내가 준비한 첫 Team을 공항에서 배웅할 때</li></ul><ul id="fcbf14ef-333b-42a3-8671-1271bf4db295" class="bulleted-list"><li>현장</li></ul><h2 id="5b63bb41-39d1-4d64-8585-bb53cdb0f0e9" class="block-color-gray_background">학력사항</h2><h3 id="2473d0ea-5fb6-45d1-b9ab-9e3800bf14c8" class="">한국 방송통신대학교 <mark class="highlight-gray">(2015. 08  졸업)</mark></h3><ul id="33067198-5230-421c-8926-1e1ff7b2a4b8" class="bulleted-list"><li>컴퓨터 과학과</li></ul><h3 id="67a54037-5e98-4547-90a5-4ecb58207463" class="">경기 과학기술 대학교 <mark class="highlight-gray">(2006. 02 졸업)</mark></h3><ul id="caf47df4-b920-4b81-8bb8-1b1c7d1ab98b" class="bulleted-list"><li>메카트로닉스 학과</li></ul><p id="40512034-a7ac-4aea-8ba1-e67a3b118490" class="">
+</p><h3 id="3763d6bd-334b-46c8-91de-851b297aa572" class="">군포 e-Business 고등학교 <mark class="highlight-gray">(1999. 02 졸업)</mark></h3><ul id="7afa36d0-a8c5-436e-aee6-6e928ddfc92b" class="bulleted-list"><li>정보처리 학과</li></ul><p id="437ea31a-4480-4fd2-b4ea-e06106fc4c91" class="">
+</p><h2 id="aad02eb4-bb0b-4043-ac0c-ef9b3a9dce59" class="block-color-gray_background">자격 사항</h2><div id="18c61e5b-4183-4d1b-96f2-9d58e09c0a0c" class="collection-content"><h4 class="collection-title">💻</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>구분</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>자격명</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>취득일자 (/년)</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>발급 기관명</th></tr></thead><tbody><tr id="a0084c10-d5be-4b76-b315-21cf7532762b"><td class="cell-@@T@"><span class="selected-value select-value-color-gray">Team 빌딩</span></td><td class="cell-title"><a href="https://www.notion.so/NVC-a0084c10d5be4b76b31521cf7532762b">비폭력 대화(NVC)</a></td><td class="cell-eBbu">2017</td><td class="cell-aMI9">국제 비폭력 대화 한국협회</td></tr><tr id="67996597-b3b7-4ba8-b182-e2b34169956f"><td class="cell-@@T@"><span class="selected-value select-value-color-gray">Team 빌딩</span></td><td class="cell-title"><a href="https://www.notion.so/Coaching-KAC-67996597b3b74ba8b182e2b34169956f">코칭 (Coaching) / KAC</a></td><td class="cell-eBbu">2017</td><td class="cell-aMI9">한국 코치협회</td></tr><tr id="36151c59-f68d-4811-b9e9-5c09546667b9"><td class="cell-@@T@"><span class="selected-value select-value-color-gray">Team 빌딩</span></td><td class="cell-title"><a href="https://www.notion.so/36151c59f68d4811b9e95c09546667b9">시나리오 플레닝</a></td><td class="cell-eBbu">2016 / 2017</td><td class="cell-aMI9">인퓨쳐 컨설팅</td></tr><tr id="56829098-049c-4da4-833e-414f012d4cc2"><td class="cell-@@T@"><span class="selected-value select-value-color-yellow">안전관리</span></td><td class="cell-title"><a href="https://www.notion.so/56829098049c4da4833e414f012d4cc2">안전관리 교육 지도사</a></td><td class="cell-eBbu">2021</td><td class="cell-aMI9">한국 자격 협회</td></tr><tr id="52cae550-6839-4773-a5fa-b64d7db4b470"><td class="cell-@@T@"><span class="selected-value select-value-color-orange">IT 일반</span></td><td class="cell-title"><a href="https://www.notion.so/CCNA-52cae55068394773a5fab64d7db4b470">CCNA</a></td><td class="cell-eBbu">2010</td><td class="cell-aMI9">CISCO</td></tr><tr id="8f9c83ee-d99b-4d34-8e98-7b27bfda2455"><td class="cell-@@T@"><span class="selected-value select-value-color-orange">IT 일반</span></td><td class="cell-title"><a href="https://www.notion.so/8f9c83eed99b4d348e987b27bfda2455">정보통신 기능사</a></td><td class="cell-eBbu">1998</td><td class="cell-aMI9">한국 산업인력 관리공단</td></tr><tr id="b0e79cef-aa90-4e61-821d-1a34c0ba20fe"><td class="cell-@@T@"><span class="selected-value select-value-color-orange">IT 일반</span></td><td class="cell-title"><a href="https://www.notion.so/Word-Processor-b0e79cefaa904e61821d1a34c0ba20fe">Word Processor</a></td><td class="cell-eBbu">1996</td><td class="cell-aMI9">대한 상공회의소</td></tr></tbody></table></div><p id="ddef068e-bd7f-41a2-a38d-4bd7b34ec8ab" class="">
+</p><h2 id="783c9a79-a48e-48ee-bbc8-6a5510166d90" class="block-color-gray_background">어학</h2><p id="914f7a2b-e2ab-4ff9-8588-3b84a236922b" class="">
+</p><ul id="6ce7d356-a7ee-454e-b4f9-ff443337fe86" class="bulleted-list"><li>이탈리아어 : 상<ul id="32677721-a80b-4414-bbb5-f0b4835d007b" class="bulleted-list"><li>프리젠테이션, 계약, 행사진행, 팀 미팅, 병원, 경찰서, 가이드 가능</li></ul></li></ul><ul id="2f987b90-aa71-42f5-acab-b2e37ef85e26" class="bulleted-list"><li>영어 : 하<ul id="fdf7b59c-7cb9-41fa-89f3-62d280f990e1" class="bulleted-list"><li>개발자 리쿠르팅, 개발 팀 미팅 가능</li></ul><p id="9260352b-3314-46e7-9b3a-d7afb2b6c228" class="">
+</p></li></ul><p id="138d5958-c2bd-4905-aad5-d073520668f0" class="">
+</p><h2 id="7844db3c-3da6-4d5e-8e85-667490380e72" class="block-color-gray_background">경험 1.</h2><p id="bc48097d-9f36-417d-ae11-a7533609cb37" class="">
+</p><ul id="55609c44-25b4-4faf-b3bc-ef1e46fe18a4" class="bulleted-list"><li>EU 국제학교 프로그램 참가 3년 (2007년 3월~2009년 12월) / Italia Firenze</li></ul><ul id="aefb0aed-7b9c-40f9-b61a-ec774b2a76fd" class="bulleted-list"><li>경기도 과천시청 민원봉사과 민원봉사팀 3년 (2001년 3월~2002년 6월) / 경기도 과천시청</li></ul><ul id="8677db7e-c61e-42c3-a2cf-1d0be36ac38f" class="bulleted-list"><li>국제 대학생 문화 교류 프로그램 교환학생 1년 (1999년 12월~2000년 12월) / Italia Firenze</li></ul><ul id="e585780c-e1c2-4006-8d9c-0114c83bd57b" class="bulleted-list"><li>경기도 군포시청 자치행정과 행정팀 인턴 4개월(1998년 12월~1999년 3월) / 경기도 군포시청</li></ul><ul id="78d21c4f-2f8d-4c01-bb75-daa354775a28" class="bulleted-list"><li>New Humanity (UN NGO) 한국지부 Youth 담당 Assistant / (2010. 08 ~ 2018. 08) / 한국</li></ul><p id="bf13605d-27dd-4a7a-916c-2e694c7f6321" class="">
+</p><h2 id="0c625bdd-7bfc-4503-9e85-39580cd7c31f" class="block-color-gray_background">경험 2.</h2><p id="bcd419e5-589c-4af0-8006-52b9c8df41a2" class="">
+</p><ul id="aa3e2f7e-7878-4917-8e36-20e2f2317085" class="bulleted-list"><li>2020년 : YouTube 프로그램 기획, 제작, 운영  </li></ul><p id="90aec404-4c47-4d14-bd70-3809bf8b22f8" class="">                     (회당 20분 6부작 / 기획, 촬영, 편집, 예산집행 , 이벤트 관리)</p><ul id="37a4d088-a2d2-4344-8ce6-f70d1f71311e" class="bulleted-list"><li>2018년 : 필리핀 마닐라 세계 젊은이 축제 Genfest 한국 총괄</li></ul><p id="6fa96ca8-9808-40e9-8004-96b43da99988" class="">                     (준비, 모집, 접수, 로마본부 연락, 항공사 컨텍, 숙소 컨텍, 마닐라 행사 진행) </p><ul id="97250f1f-dcf0-4df3-90f0-4ecfc54ace82" class="bulleted-list"><li>2014년 : AYD 공연 기획 (프란치스코 교황 방문)</li></ul><p id="1a4d7248-49dc-4d88-beff-797741198628" class="">                     (아시아 청년 대회 &#x27;Meditation&#x27; 공연기획 총괄 : 국립 천안 청소년 수련원)</p><ul id="cd316812-dee2-462d-9b9c-c97af0f2ec82" class="bulleted-list"><li>2012년 : 헝가리 부다페스트 세계 젊은이 축제 Genfest 한국 Staff</li></ul><p id="9f7c5ab0-ed0d-4913-ba3c-28ca76c9a308" class="">                     (준비, 모집, 접수, 로마본부 연락, 항공사 컨텍, 숙소 컨텍, 마닐라 행사 진행) </p><p id="1034a45b-ab4c-4efe-bcd7-3e2341015af9" class="">
+</p><h2 id="585f3d74-022f-439c-a234-aeb120a6267c" class="block-color-gray_background">사용 가능한 기술</h2><ul id="10ff27fb-8dff-4751-ac59-f93fbe91eaa0" class="bulleted-list"><li>그 처음 시작은 &#x27;엔지니어&#x27; 들과 대화 하기 위해 시작 하였습니다.</li></ul><div id="97e6877d-7922-4996-a705-8ed3bdf9acec" class="collection-content"><h4 class="collection-title">대화를 위한 도구</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>구분</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>프로그램</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>내용</th></tr></thead><tbody><tr id="05be34bf-5ea8-4f15-bbe2-80d8654c06f8"><td class="cell-?Ec}"><span class="selected-value select-value-color-blue">프로그램</span></td><td class="cell-[C~l"><span class="selected-value select-value-color-blue">python pandas</span></td><td class="cell-title"><a href="https://www.notion.so/05be34bf5ea84f15bbe280d8654c06f8">데이터 전처리, 기본 시각화 가능</a></td></tr><tr id="aa0d5fee-f5c6-4ef5-ba74-ecc1b1ed9fd6"><td class="cell-?Ec}"><span class="selected-value select-value-color-blue">프로그램</span></td><td class="cell-[C~l"><span class="selected-value select-value-color-blue">SQL</span></td><td class="cell-title"><a href="https://www.notion.so/aa0d5feef5c64ef5ba74ecc1b1ed9fd6">데이터 전처리</a></td></tr><tr id="a9a08293-b063-4159-9605-4b7137ed6a65"><td class="cell-?Ec}"><span class="selected-value select-value-color-blue">프로그램</span></td><td class="cell-[C~l"><span class="selected-value select-value-color-blue">GitHub</span></td><td class="cell-title"><a href="https://www.notion.so/https-github-com-avantisanghoon-a9a08293b063415996054b7137ed6a65">https://github.com/avantisanghoon</a></td></tr><tr id="49031a86-35d3-47aa-b832-ac3368d97165"><td class="cell-?Ec}"><span class="selected-value select-value-color-blue">프로그램</span></td><td class="cell-[C~l"><span class="selected-value select-value-color-blue">MySQL</span></td><td class="cell-title"><a href="https://www.notion.so/49031a8635d347aab832ac3368d97165">공부중</a></td></tr><tr id="466c6d7d-7e4a-41a3-9917-ec155e847b68"><td class="cell-?Ec}"><span class="selected-value select-value-color-green">협업</span></td><td class="cell-[C~l"><span class="selected-value select-value-color-green">Trello</span></td><td class="cell-title"><a href="https://www.notion.so/PM-466c6d7d7e4a41a39917ec155e847b68">PM 시 사용</a></td></tr><tr id="62cdb6ba-e0dd-49b3-bb61-4e37ebddec3e"><td class="cell-?Ec}"><span class="selected-value select-value-color-green">협업</span></td><td class="cell-[C~l"><span class="selected-value select-value-color-green">Google workspace</span></td><td class="cell-title"><a href="https://www.notion.so/word-sheet-drive-62cdb6bae0dd49b3bb614e37ebddec3e">word, sheet, drive 사용</a></td></tr><tr id="e9fa236b-3c45-49c4-a372-ae7e4064adae"><td class="cell-?Ec}"><span class="selected-value select-value-color-green">협업</span></td><td class="cell-[C~l"><span class="selected-value select-value-color-green">Slack</span></td><td class="cell-title"><a href="https://www.notion.so/e9fa236b3c4549c4a372ae7e4064adae">이전 직장에서 전 직원이 함께 사용</a></td></tr><tr id="8ffba517-2b98-4ddd-9ec7-370803ae98b9"><td class="cell-?Ec}"><span class="selected-value select-value-color-green">협업</span></td><td class="cell-[C~l"><span class="selected-value select-value-color-green">Notion</span></td><td class="cell-title"><a href="https://www.notion.so/8ffba5172b984ddd9ec7370803ae98b9">개인적으로 사용</a></td></tr><tr id="65dbc4e0-5df8-4e5e-aa78-0d3f9e058673"><td class="cell-?Ec}"><span class="selected-value select-value-color-purple">기획</span><span class="selected-value select-value-color-green">협업</span></td><td class="cell-[C~l"><span class="selected-value select-value-color-purple">Kakao Oven</span></td><td class="cell-title"><a href="https://www.notion.so/65dbc4e05df84e5eaa780d3f9e058673">개인적으로 사용</a></td></tr><tr id="b333354a-8942-4652-8d8d-37c1739b064c"><td class="cell-?Ec}"><span class="selected-value select-value-color-orange">기타</span></td><td class="cell-[C~l"><span class="selected-value select-value-color-gray">Ms Office</span></td><td class="cell-title"><a href="https://www.notion.so/word-excel-ppt-b333354a894246528d8d37c1739b064c">word, excel, ppt 기본 사용</a></td></tr><tr id="5e5fa63a-643b-46c5-964a-8c17bdc4ec22"><td class="cell-?Ec}"><span class="selected-value select-value-color-orange">기타</span></td><td class="cell-[C~l"><span class="selected-value select-value-color-gray">MS Visio</span></td><td class="cell-title"><a href="https://www.notion.so/5e5fa63a643b46c5964a8c17bdc4ec22">도면 설계 프로그램 사용 
+(모든것을 그릴 수 있음)</a></td></tr><tr id="c6b7f0af-b36d-45fe-bb31-61b67d0fe061"><td class="cell-?Ec}"><span class="selected-value select-value-color-pink">영상</span></td><td class="cell-[C~l"><span class="selected-value select-value-color-orange">Movavi</span></td><td class="cell-title"><a href="https://www.notion.so/c6b7f0afb36d45febb3161b67d0fe061">영상 편집 프로그램</a></td></tr><tr id="5f92ded0-e613-45a5-993d-7c15caa74c6c"><td class="cell-?Ec}"><span class="selected-value select-value-color-pink">영상</span></td><td class="cell-[C~l"><span class="selected-value select-value-color-orange">뱁믹스</span></td><td class="cell-title"><a href="https://www.notion.so/5f92ded0e61345a5993d7c15caa74c6c">예능 형식의 자막 편집 프로그램</a></td></tr><tr id="f2b38351-36b9-4abb-b0ec-b211d5b480e5"><td class="cell-?Ec}"><span class="selected-value select-value-color-pink">영상</span></td><td class="cell-[C~l"><span class="selected-value select-value-color-orange">YouTube Live Streaming</span></td><td class="cell-title"><a href="https://www.notion.so/f2b3835136b94abbb0ecb211d5b480e5">라이브 스트리밍을 위한 음향, 카메라, 방송 연결 및 송출</a></td></tr><tr id="f0ab1708-3168-4b9c-96f7-041db2270bf8"><td class="cell-?Ec}"><span class="selected-value select-value-color-yellow">음향</span></td><td class="cell-[C~l"><span class="selected-value select-value-color-red">음향설치</span></td><td class="cell-title"><a href="https://www.notion.so/2-000-Mixer-f0ab170831684b9c96f7041db2270bf8">최대 2,000명 / 장비 설치 / Mixer</a></td></tr><tr id="4fa03fe2-f18a-4815-b7e9-2b0aa7791d54"><td class="cell-?Ec}"></td><td class="cell-[C~l"></td><td class="cell-title"><a href="https://www.notion.so/4fa03fe2f18a4815b7e92b0aa7791d54">제목 없음</a></td></tr></tbody></table></div><h2 id="b57bc32a-7d9d-4d1f-a891-17bcdef3932a" class="block-color-gray_background">즐겨 하는것 (구 취미)</h2><div id="87bc6641-c328-4830-a76b-b9e8301187d3" class="collection-content"><h4 class="collection-title"></h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>구분</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>이름</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>키워드</th></tr></thead><tbody><tr id="7c6ff6bb-0ebd-46db-a6f0-da72970ad936"><td class="cell-cHJ}"><span class="selected-value select-value-color-green">자신감</span><span class="selected-value select-value-color-yellow">편안함</span><span class="selected-value select-value-color-blue">함께</span></td><td class="cell-title"><a href="https://www.notion.so/7c6ff6bb0ebd46dba6f0da72970ad936">스킨스쿠버 다이빙</a></td><td class="cell-dvo^"><span class="selected-value select-value-color-green">막연한 두려움</span><span class="selected-value select-value-color-blue">버디</span><span class="selected-value select-value-color-green">위기 대처 능력</span><span class="selected-value select-value-color-yellow">중성부력</span></td></tr><tr id="5d889691-5910-4b7d-9f35-d980712313de"><td class="cell-cHJ}"><span class="selected-value select-value-color-green">자신감</span><span class="selected-value select-value-color-yellow">편안함</span></td><td class="cell-title"><a href="https://www.notion.so/5d88969159104b7d9f35d980712313de">수영</a></td><td class="cell-dvo^"><span class="selected-value select-value-color-yellow">물 속은 나의 집</span><span class="selected-value select-value-color-green">뭐든지 꾸준히 하면</span><span class="selected-value select-value-color-green">유일하게 잘 하는 운동</span></td></tr><tr id="09714b3f-4c91-47aa-b3eb-b0a7c7167098"><td class="cell-cHJ}"><span class="selected-value select-value-color-orange">혼자만의 시간</span></td><td class="cell-title"><a href="https://www.notion.so/Tea-09714b3f4c9147aab3ebb0a7c7167098">수제 차(Tea:) 만들기</a></td><td class="cell-dvo^"><span class="selected-value select-value-color-orange">재료를 구하러 여행하기</span></td></tr><tr id="69072ae9-9180-40cd-b4a0-e038e276fadc"><td class="cell-cHJ}"><span class="selected-value select-value-color-red">창의적인</span><span class="selected-value select-value-color-brown">행복감</span></td><td class="cell-title"><a href="https://www.notion.so/69072ae9918040cdb4a0e038e276fadc">향수 만들기</a></td><td class="cell-dvo^"><span class="selected-value select-value-color-red">상대를 위한 단 하나뿐인 향수</span><span class="selected-value select-value-color-brown">향수는 매번 같을 수 없다</span></td></tr></tbody></table></div><h2 id="8bf86653-2b2d-4372-abab-1d267787c218" class="block-color-gray_background">사례를 통해 알아본 주로 하는 &#x27;실수&#x27; (구 단점)</h2><p id="fcc94887-a94c-4bfe-a422-4617c0a14ba4" class="">
+</p><div id="0133289e-a083-4bf0-a02d-a28bc635d41e" class="collection-content"><h4 class="collection-title"></h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>이름</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>내용</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>키워드</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>극복 방법</th></tr></thead><tbody><tr id="388202f5-41f7-4063-b31a-b653923ae6b6"><td class="cell-title"><a href="https://www.notion.so/388202f541f74063b31ab653923ae6b6">&#x27;등잔 밑&#x27;이 어둡다</a></td><td class="cell-W[rK">데이터 시각화를 공부하여 결과값을 출력 하였으나 마지막 결과값이 나오지 않아 여러번 다시 돌리고, 재 확인하고, 프로그래머에게 메일쓰고 하였으나 알고보니 화면 아래에 가려져서 안 보였던 것이었다. &quot;스크롤 하면 마지막에 결과 있었음&quot; </td><td class="cell-U}V:"><span class="selected-value select-value-color-purple">꼼꼼함 부족</span><span class="selected-value select-value-color-red">빨리 &#x27;안심&#x27; 하고픈 마음</span><span class="selected-value select-value-color-yellow">빨리 끝내고픈 마음</span></td><td class="cell-Eiqg"><span class="selected-value select-value-color-yellow">쉼호흡 자주 하기</span><span class="selected-value select-value-color-brown">의심하고 물어보기</span></td></tr><tr id="c5559bf4-7f09-4895-bd5b-f529367d3396"><td class="cell-title"><a href="https://www.notion.so/c5559bf47f094895bd5bf529367d3396">가장 &#x27;기본&#x27; 중의 &#x27;기본&#x27;</a></td><td class="cell-W[rK">1,200여 명이 모여 4일간 진행하는 행사의 &#x27;음향총괄&#x27;을 담당하였다. 그에 맞는 장비들을 음향 팀들과 밤새 설치하고 음향신호 테스트를 진행하던 중 한 악기의 신호가 잡히지 않았다. 다양한 방법으로 시도를 하고, 처음부터 차근차근 연결을 점검 했지만 원인을 알 수 없었다. 원인은 &quot;멀티탭 전원을 On&quot; 하지 않았던 것이었다. 무려 30분을 허비하였다.</td><td class="cell-U}V:"><span class="selected-value select-value-color-purple">꼼꼼함 부족</span><span class="selected-value select-value-color-brown">끝냈다는 &#x27;안도감&#x27; 사실 &#x27;시작&#x27; 인데</span><span class="selected-value select-value-color-green">완벽하다는 자만 그리고 착각</span></td><td class="cell-Eiqg"><span class="selected-value select-value-color-green">&quot;나의 단점을 알리자&quot;</span><span class="selected-value select-value-color-gray">&quot;피드백&quot;은 위 아래가 없다</span><span class="selected-value select-value-color-red">돌다리도 두들겨 보고 건너자</span><span class="selected-value select-value-color-blue">서로서로 크로스 체크</span><span class="selected-value select-value-color-yellow">쉼호흡 자주 하기</span></td></tr><tr id="5db4f923-853e-4c37-8d84-960fc199f5c0"><td class="cell-title"><a href="https://www.notion.so/5db4f923853e4c378d84960fc199f5c0">제목 없음</a></td><td class="cell-W[rK"></td><td class="cell-U}V:"></td><td class="cell-Eiqg"></td></tr></tbody></table></div><p id="24f287f3-b3ea-4073-aaed-ca472dc31df4" class="">
+</p><h3 id="28aad2fd-4196-4d8f-96e0-457fd9cbfb39" class="block-color-gray_background">(Bonus) 가장 특이한 이력 1개_<mark class="highlight-gray">1,200명을 위한 Assador(바베큐 파티)</mark>🤦‍♂️ </h3><p id="617b5b6a-d840-43cc-8d6a-e9f3345faf14" class="">
+</p><p id="932e63b9-d866-4dfa-a7ba-4dc62fdc8543" class="">일시 : 2008년 10월</p><p id="c9ea220c-9fe5-4b59-b081-a80162826346" class="">장소 : 이탈리아 피렌체 인치사 발다르노 (Italia Firenze, Incisa in Val D&#x27;arno, C.P. 63)</p><p id="b4f6f60e-1a1c-4b3d-b8eb-6acda158d588" class="">초대인원 : 1,200명의 전 마을 주민</p><p id="f61b0c81-eee8-4647-9989-94c16b8ded5e" class="">담당업무 : 음향기기 섭외 및 설치 / 숯 담당</p><p id="f41bc052-08f6-441c-b89b-2c6664841473" class="">준비팀 이름 : Equipe Animali (동물 동호회, 총 6명)</p><p id="3bfc7366-4f6f-40cb-a21a-95393dd5c3f7" class="">준비기간 : 1년</p><p id="345c1717-26c2-407c-a231-dc6905753fa3" class="">동물 : 돼지 3마리, 소 1마리</p><p id="bb66878b-4a79-4e65-97aa-92cfe26302b8" class="">준비과정  :  동호회 구성→기획→제안(시, 학교)→스폰 모집→동물 우리 준비→동물 구입→동물 키우기→도축업체 선정→도축 및 서류 준비→축제 허가(시청, 경찰서, 산림 감시원 등)→시민들 에게 초대장 전달→고기 준비→축제→결산</p><p id="05e65163-db37-4316-b5b9-513a8a6c2c11" class="">
+</p><p id="d17932b0-bc8f-4535-b8fe-de3f21962bef" class="">👍 Got </p><p id="150a1318-0887-46d4-847c-e794b6ba0068" class="">
+</p><ul id="90e82fb7-86f8-4f44-bb1b-a666ad77ae1c" class="bulleted-list"><li>식용을 위한 동물 Document : 서류가 없는 동물로 바비큐를 하면 불법 이다.</li></ul><ul id="a05bf873-6e81-4f84-ab81-de14378f6cea" class="bulleted-list"><li>바비큐의 신고 방법 : 규모에 따른 신고 방법, 신고 기관 (시청, 산림 감시원 등) </li></ul><ul id="64a29ba7-33f5-413a-a211-f7960e482f9a" class="bulleted-list"><li>모자이크 : 각자의 자리에서 책임을 다 해야 하나의 그림이 완성된다.</li></ul><ul id="80a2accb-50d4-4215-83aa-0c211c04e36c" class="bulleted-list"><li>기다림 : 기다리고 또 기다려서 천천히 구워야 한다.</li></ul><ul id="71d39fd6-e120-4d08-bec2-511dcdc8b130" class="bulleted-list"><li>기다림 또한 즐길 줄 아는 사람들</li></ul><ul id="95196ec8-f37a-42b3-a4f4-1ae7ca8b883b" class="bulleted-list"><li>&#x27;축제&#x27; 는 &#x27;위로&#x27; 받는 시간 이어야 한다.</li></ul><ul id="fb56747f-83bd-4c88-b135-feb708e16f5b" class="bulleted-list"><li>용접 하는 법. 그릴 만드는 법</li></ul><p id="cf59ae79-8c03-496e-a87a-6aff60796bd0" class="">
+</p><div id="12f0aeb8-b5e1-44c9-a572-9152ddad5436" class="collection-content"><h4 class="collection-title">Festa di Grillia</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>이름</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>생성일</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>태그</th></tr></thead><tbody><tr id="1157fca0-4726-41b0-9073-abedc17f6912"><td class="cell-title"><a href="https://www.notion.so/1-1157fca0472641b09073abedc17f6912">페이지 1</a></td><td class="cell-PcY;"><time>@2021년 6월 29일 오후 7:52</time></td><td class="cell-ZP=e"></td></tr><tr id="97b5add9-888a-432d-b4b7-80b62f7ecaa7"><td class="cell-title"><a href="https://www.notion.so/2-97b5add9888a432db4b780b62f7ecaa7">페이지 2</a></td><td class="cell-PcY;"><time>@2021년 6월 29일 오후 7:52</time></td><td class="cell-ZP=e"></td></tr><tr id="e56c71e2-e8f3-4fdb-a48d-e036dfb4c998"><td class="cell-title"><a href="https://www.notion.so/3-e56c71e2e8f34fdba48de036dfb4c998">페이지 3</a></td><td class="cell-PcY;"><time>@2021년 6월 29일 오후 7:52</time></td><td class="cell-ZP=e"></td></tr></tbody></table></div><p id="f7629dac-a188-45ce-9ef2-a8b747f97bb0" class="">
+</p></div></article></body></html>
